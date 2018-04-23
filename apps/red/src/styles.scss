@@ -1,0 +1,71 @@
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$red-app-primary: mat-palette($mat-teal);
+$red-app-accent: mat-palette($mat-grey, 600);
+
+// Create the theme object
+$red-app-theme: mat-light-theme(
+  $red-app-primary,
+  $red-app-accent
+);
+
+@include angular-material-theme($red-app-theme);
+
+$header-height: 64px;
+
+html, body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.app-header {
+  z-index: 5;
+  position: relative;
+  padding: 0 8px;
+  background-color: #fff;
+  min-height: $header-height;
+  height: $header-height;
+  box-shadow: 0 0 3px rgba(0,0,0,.05);
+
+  .logo {
+    display: inline-block;
+    padding: 10px 0 0px 20px;
+  }
+}
+
+.app-sidenav-container {
+  width: 100%;
+  max-width: 100%;
+  height: calc(100vh - #{$header-height});
+}
+
+.app-outlet {
+  padding: 24px;
+}
+
+.sidenav {
+  width: 15rem;
+  background: #f2f2f2;
+  box-shadow: inset -0.5px 0 0 rgba(0,0,0,.05);
+}
+
+.menu-badge {
+  display: inline-block;
+  height: 18px;
+  min-width: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 0 4px;
+  background-color: mat-color($red-app-primary);
+  color: #fff;
+}

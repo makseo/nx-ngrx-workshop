@@ -1,0 +1,7 @@
+<div style="text-align: right; margin-bottom: 20px;">
+  <button mat-raised-button color="primary" (click)="openPatientNewDialog()">
+    Neuer Patient
+  </button>
+</div>
+
+<patients-table [patients]="patients$ | async"></patients-table>
